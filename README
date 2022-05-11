@@ -1,5 +1,30 @@
-Hello!
 
-This is my 4th Homework Assignment. "Code Quiz"
+# CODE QUIZ
 
-I have utilized HTML, CSS, and Javascript to create a quiz that keeps score.
+## Description
+
+This project is a timed coding quiz with multiple-choice options. The application runs in browser, and it features dynamically updated HTML and CSS powered by Javascript code.
+
+
+## User Story
+
+AS A coding boot camp student  
+I WANT to take a timed quiz on JavaScript fundamentals that stores high scores  
+SO THAT I can gauge my progress compared to my peers  
+
+
+## Deployed Link
+
+https://anitachengalva.github.io/code-quiz/
+
+
+## Screenshots
+
+## Contact Me
+
+Thanks for checking out this README! If you have anymore questions, my email is webdev.anita@gmail.com OR my Github is https://github.com/anitachengalva/
+
+
+## License
+
+This project is licensed under the MIT License.
