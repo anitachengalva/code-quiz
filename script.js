@@ -1,7 +1,7 @@
 // declare variables
 var start = document.getElementById("start");
 start.onclick = startQuiz;
-// var done = document.getElementById("done");
+var done = document.getElementById("done");
 // done.onclick = submitScore;
 var finalScore = document.getElementById("finalScore");
 
@@ -155,7 +155,7 @@ function startQuiz() {
 
 function end() {
     // hides questions
-    document.getElementById("ansBtns").setAttribute("hidden", "true");
+    document.getElementById("questionNestedBox").setAttribute("hidden", "true");
     // shows SUBMIT button
     done.removeAttribute("hidden");
     // changes text to end screen
