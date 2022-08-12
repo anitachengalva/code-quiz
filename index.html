@@ -4,25 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    ;
     <title>Coding Quiz</title>
   </head>
   <body>
     <header>
-      <h1>Code Quiz</h1>
-      <h3>Test your developer knowledge and challenge your friends!</h3>
+      <h1 id="questionNumber">Code Quiz</h1>
+      <h3 id="hideThis">Test your developer knowledge and challenge your friends!</h3>
     </header>
-    <section>
+    <section id="timerBox">
       <h3>COUNTDOWN</h3>
+      <article id="timer"></article>
     </section>
-    <section>
+    <section id="scoreBox">
       <h3>LEADERBOARD</h3>
+      <article id="scoreList"></article>
     </section>
-    <section>
+    <section id="questionBox">
       <h3 id="question">Are you ready?</h3>
       <section id="choices">
         <p id="choices">Let's Go!</p>
-        <button>START</button>
+        <button class="start">START</button>
       </section>
     </section>
   </body>
