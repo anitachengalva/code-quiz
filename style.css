@@ -1,5 +1,5 @@
 * {
-  background-color: whitesmoke;
+  background-color: white;
   box-sizing: border-box;
 }
 
@@ -60,5 +60,23 @@ header {
 
 #question {
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(123, 76, 233);
+    color: darkgray;
+}
+
+#choices {
+    display: flex;
+    flex-direction: column;
+}
+
+#choices h4 {
+    color: darkgray;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#choices button {
+    background-color: rgb(93, 168, 125);
+    border-color: rgb(93, 168, 125);
+    color: white;
+    padding: 10px;
+    border-radius: 20%;
 }
