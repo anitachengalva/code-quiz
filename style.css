@@ -88,7 +88,7 @@ header {
   font-family: "Courier New", Courier, monospace;
 }
 
-#choices button {
+button {
   background-color: rgb(93, 168, 125);
   border-color: rgb(93, 168, 125);
   color: white;
@@ -97,22 +97,10 @@ header {
   border-radius: 5%;
 }
 
-#choices button:hover {
+button:hover {
   background-color: rgb(125, 197, 156);
 }
 
-#choices button:active {
+button:active {
   background-color: rgb(84, 153, 114);
 }
-
-/* #done button { */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  /* background-color: rgb(93, 168, 125);
-  border-color: rgb(93, 168, 125);
-  color: white; */
-  /* padding: 10px;
-  margin: 10px;
-  border-radius: 5%; */
-/* } */
