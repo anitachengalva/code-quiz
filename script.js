@@ -122,6 +122,7 @@ function setTimer() {
 // adds to user's score if it is
 choices.addEventListener("click", function(event) {
     var chosenAns = event.target;
+    var yourScore = document.getElementById("yourScore");
     if (chosenAns.matches("#start") === false) {
         var result;
         if (
@@ -129,6 +130,7 @@ choices.addEventListener("click", function(event) {
         ) {
             score = score + 1;
             result = "CORRECT +1 POINT";
+            yourScore.textContent = "Your Score: " + score;
         } else {
             clock = clock - 30;
             result = "INCORRECT -30 SEC";
