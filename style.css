@@ -1,0 +1,17 @@
+* {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+}
+
+header {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+
+#questionNumber {
+  color: rgb(51, 51, 255);
+}
+
+#hideThis {
+    color: rgb(93, 168, 125);
+}
