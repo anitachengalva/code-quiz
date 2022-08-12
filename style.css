@@ -21,6 +21,8 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 200px;
+    background-color: gray;
 }
 
 #timerAndScore h3 {
@@ -30,17 +32,30 @@ header {
 }
 
 #scoreBox {
+    color: tomato;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    padding: 30px;
     margin: 5px 30px;
 }
 
 #timerBox {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    padding: 30px;
     margin: 5px 30px;
+}
+
+#timer {
+    background-color: tomato;
+    padding: 10px;
+    border: 2px rgb(212, 78, 55);
+    border-radius: 20px;
 }
 
 #allBlocks {

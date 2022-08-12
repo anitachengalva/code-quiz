@@ -92,7 +92,7 @@ var questions = [
 function setTimer() {
     var timeInterval = setInterval(function () {
         clock--;
-        timer.textContent = "TIME:" + clock;
+        timer.textContent = clock + " SECONDS";
         if (clock === 0) {
             clearInterval(timeInterval);
             // end();
@@ -102,8 +102,10 @@ function setTimer() {
 
 function startQuiz() {
     setTimer();
-    document.getElementById("start");
-    start.setAttribute("hidden", "true");
+    // hides start button
+    document.getElementById("start").setAttribute("hidden", "true");
+    // shows timer
+    document.getElementById("timer").removeAttribute("hidden");
 };
 
 // function end() {
