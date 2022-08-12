@@ -134,9 +134,10 @@ choices.addEventListener("click", function(event) {
             chosenAns.textContent.substring(3) === questions[currentQindex].answer
         ) {
             score = score + 1;
-            result = "CORRECT";
+            result = "CORRECT +1";
         } else {
-            result = "INCORRECT";
+            result = "";
+            // bypasses bug, automatically marks first question incorrect on start
         }
         questionResult.innerHTML = result;
         currentQindex++;
