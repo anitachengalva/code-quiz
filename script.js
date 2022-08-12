@@ -107,17 +107,25 @@ function showQ() {
     }
 };
 
+var isPaused = false;
+
+
 function setTimer() {
     var timeInterval = setInterval(function () {
         clock--;
         timer.textContent = clock + " SECONDS";
-        if (clock <= 0) {
-            clearInterval(timeInterval);
+        if (clock <= -1) {
+            pausedTimer(timeInterval);
             end();
+            clock++;
+            timer.textContent = clock + " SECONDS";
         }
     }, 1000);
 };
 
+function pausedTimer(){
+    isPaused = true;
+};
 
 // checks if chosen answer is correct
 // adds to user's score if it is
@@ -158,6 +166,8 @@ function startQuiz() {
 };
 
 function end() {
+    // stops timer
+    pausedTimer();
     // hides questions
     document.getElementById("questionNestedBox").setAttribute("hidden", "true");
     // shows SUBMIT button
