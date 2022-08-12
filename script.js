@@ -119,8 +119,13 @@ function setTimer() {
             end();
             clock++;
             timer.textContent = clock + " SECONDS";
-        }
-    }, 1000);
+        } else if (questions.length === 10) {
+            pausedTimer(timeInterval);
+            end();
+            clock++;
+            timer.textContent = clock + " SECONDS";
+            }
+        },1000);
 };
 
 function pausedTimer(){
@@ -178,6 +183,8 @@ function end() {
 
 function submitScore() {
     done.setAttribute("hidden", "true");
+    // stops timer
+    pausedTimer();
     initialsField.removeAttribute("hidden");
     questionResult.textContent = "Please enter your initials";
 };
