@@ -10,8 +10,30 @@ header {
 
 #questionNumber {
   color: rgb(51, 51, 255);
+  font-size: 50px;
 }
 
 #hideThis {
     color: rgb(93, 168, 125);
+}
+
+#timerAndScore {
+    display: flex;
+    justify-content: center;
+}
+
+#timerAndScore h3 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: tomato;
+}
+
+#scoreBox {
+    justify-content: flex-start;
+    margin: 5px 30px;
+}
+
+#timerBox {
+    justify-content: flex-end;
+    margin: 5px 30px;
 }
