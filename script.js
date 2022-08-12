@@ -2,14 +2,14 @@
 var start = document.getElementById("start");
 start.onclick = startQuiz;
 var done = document.getElementById("done");
-// done.onclick = submitScore;
-var finalScore = document.getElementById("finalScore");
+done.onclick = submitScore;
+var yourScore = document.getElementById("yourScore");
 
 let score = 0;
 let clock = 101;
 
 var timer = document.getElementById("timer");
-var message = document.getElementById("message");
+var initialsField = document.getElementById("initialsField");
 var scoreList = document.getElementById("scoreList");
 
 var questionBox = document.getElementById("questionBox")
@@ -122,7 +122,6 @@ function setTimer() {
 // adds to user's score if it is
 choices.addEventListener("click", function(event) {
     var chosenAns = event.target;
-    var yourScore = document.getElementById("yourScore");
     if (chosenAns.matches("#start") === false) {
         var result;
         if (
@@ -163,3 +162,22 @@ function end() {
     // changes text to end screen
     questionResult.textContent = "GAME OVER - Would you like to submit your score?";
 };
+
+function submitScore() {
+    done.setAttribute("hidden", "true");
+    initialsField.removeAttribute("hidden");
+    questionResult.textContent = "Please enter your initials";
+};
+
+// scores to local storage
+// var allScores = localStorage.getItem("allScores");
+// if (allScores) {
+//     allScores = JSON.parse(allScores);
+// } else {
+//     allScores = [];
+// };
+
+// for (var i = 0; i < allScores.length; i++) {
+//     var allScores = allScores[i];
+// };
+
