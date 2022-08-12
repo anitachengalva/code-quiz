@@ -12,6 +12,7 @@ var timer = document.getElementById("timer");
 var initialsField = document.getElementById("initialsField");
 var initials = document.getElementById("initials");
 var scoreList = document.getElementById("scoreList");
+var leaderboard = [];
 
 var questionBox = document.getElementById("questionBox")
 var questionTitle = document.getElementById("questionTitle");
@@ -119,11 +120,11 @@ function setTimer() {
             end();
             clock++;
             timer.textContent = clock + " SECONDS";
-        } else if (questions.length === 10) {
-            pausedTimer(timeInterval);
-            end();
-            clock++;
-            timer.textContent = clock + " SECONDS";
+        // } else if (questions.length === 10) {
+        //     pausedTimer(timeInterval);
+        //     end();
+        //     clock++;
+        //     timer.textContent = clock + " SECONDS";
             }
         },1000);
 };
@@ -191,17 +192,33 @@ function submitScore() {
 
 
 // scores to local storage
-initialsField.addEventListener("click", function (event) {
-    
+initialsField.addEventListener("input", function (event) {
+    event.preventDefault();
+    let userInitials = initialsField.value;
+    if (userInitials === "" || userInitials === " ") {
+        userInitials = alert("Please input valid initials!");
+    } else {
+        initialsField.value = " ";
+        var userScore = userInitials.concat(": ", score);
+        leaderboard.push(userScore);
+        localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+        var rankings = document.createElement("li");
+        rankings.textContent = userScore;
+        scoreList.appendChild(rankings);
+    }
 })
-var allScores = localStorage.getItem("allScores");
-if (allScores) {
-    allScores = JSON.parse(allScores);
+
+function loadScores() {
+leaderboard = JSON.parse(localStorage.getItem("leaderboard"));
+if (leaderboard === null) {
+    leaderboard = [];
 } else {
-    allScores = [];
+    // display high scores
+    var displayLeaderboard = leaderboard.sort();
+    for (var i=0; i < displayLeaderboard.length; i++) {
+        var rankings = document.createElement("li");
+        rankings.textContent = displayLeaderboard[i];
+        scoreList.appendChild(rankings);
+    }
 };
-
-for (var i = 0; i < allScores.length; i++) {
-    var allScores = allScores[i];
 };
-
