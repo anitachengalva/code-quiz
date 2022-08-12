@@ -1,7 +1,8 @@
 // declare variables
 var start = document.getElementById("start");
 start.onclick = startQuiz;
-var end = document.getElementById("end");
+var done = document.getElementById("done");
+// done.onclick = submitScore;
 var finalScore = document.getElementById("finalScore");
 
 let score = 0;
@@ -99,7 +100,7 @@ function showQ() {
 
     // for loop - going through every question object
     for (var i = 0; i < currentQ.choice.length; i++) {
-        var choiceButton = document.createElement("button");
+        var choiceButton = Object.assign(document.createElement("button"),{id:"ansBtns"});
         choiceButton.textContent = i + 1 + ". " + currentQ.choice[i];
         choices.appendChild(choiceButton);
     }
@@ -153,5 +154,5 @@ function startQuiz() {
 };
 
 // function end() {
-//     quest
+    
 // }
