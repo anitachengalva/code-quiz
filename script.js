@@ -13,6 +13,7 @@ var scoreList = document.getElementById("scoreList");
 
 var questionBox = document.getElementById("questionBox")
 var questionTitle = document.getElementById("questionTitle");
+var questionResult = document.getElementById("questionResult");
 var choices = document.getElementById("choices");
 var currentQ;
 var currentQindex = 0;
@@ -20,7 +21,7 @@ var currentQindex = 0;
 // array of answer options per quiz question
 var questions = [
     {
-        // hitting start button skips a question, added in a placeholder for the skipped Q, freebie point
+        // hitting start button skips a question, added in a placeholder for the skipped Q
         title: "null",
         choice: ["null"],
         answer: "null"
@@ -116,10 +117,11 @@ function setTimer() {
         timer.textContent = clock + " SECONDS";
         if (clock === 0) {
             clearInterval(timeInterval);
-            // end();
+            end();
         }
     }, 1000);
 };
+
 
 // checks if chosen answer is correct
 // adds to user's score if it is
@@ -136,7 +138,7 @@ choices.addEventListener("click", function(event) {
         } else {
             result = "INCORRECT";
         }
-        document.getElementById("questionResult").innerHTML = result;
+        questionResult.innerHTML = result;
         currentQindex++;
         if (currentQindex === questions.length) {
             end();
@@ -149,13 +151,13 @@ choices.addEventListener("click", function(event) {
 function startQuiz() {
     setTimer();
     // hides start button
-    document.getElementById("start").setAttribute("hidden", "true");
+    start.setAttribute("hidden", "true");
     // shows timer
-    document.getElementById("timer").removeAttribute("hidden");
+    timer.removeAttribute("hidden");
     // gets quiz questions to display
     showQ();
 };
 
 // function end() {
-
+//     quest
 // }
