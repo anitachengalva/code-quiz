@@ -153,6 +153,11 @@ function startQuiz() {
     showQ();
 };
 
-// function end() {
-    
-// }
+function end() {
+    // hides questions
+    document.getElementById("ansBtns").setAttribute("hidden", "true");
+    // shows SUBMIT button
+    done.removeAttribute("hidden");
+    // changes text to end screen
+    questionResult.textContent = "GAME OVER - Would you like to submit your score?";
+};
