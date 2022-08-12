@@ -8,17 +8,18 @@ header {
   text-align: center;
 }
 
-#questionNumber {
+#heading {
   color: rgb(51, 51, 255);
   font-size: 50px;
 }
 
-#hideThis {
+#questionNumber {
     color: rgb(93, 168, 125);
 }
 
 #timerAndScore {
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -29,11 +30,35 @@ header {
 }
 
 #scoreBox {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     margin: 5px 30px;
 }
 
 #timerBox {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     margin: 5px 30px;
+}
+
+#allBlocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#questionBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: max-content;
+    padding: 20px;
+}
+
+#question {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(123, 76, 233);
 }
