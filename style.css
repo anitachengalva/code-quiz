@@ -72,7 +72,7 @@ header {
     padding: 20px;
 }
 
-#question {
+#questionTitle {
     font-family: 'Courier New', Courier, monospace;
     color: darkgray;
 }
@@ -92,5 +92,14 @@ header {
     border-color: rgb(93, 168, 125);
     color: white;
     padding: 10px;
-    border-radius: 20%;
+    margin: 10px;
+    border-radius: 5%;
+}
+
+#choices button:hover {
+    background-color: rgb(125, 197, 156);
+}
+
+#choices button:active {
+    background-color: rgb(84, 153, 114);
 }

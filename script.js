@@ -4,7 +4,6 @@ start.onclick = startQuiz;
 var end = document.getElementById("end");
 var finalScore = document.getElementById("finalScore");
 
-let i = 0;
 let score = 0;
 let clock = 99;
 
@@ -12,82 +11,98 @@ var timer = document.getElementById("timer");
 var message = document.getElementById("message");
 var scoreList = document.getElementById("scoreList");
 
-var question = document.getElementById("question");
+var questionBox = document.getElementById("questionBox")
+var questionTitle = document.getElementById("questionTitle");
 var choices = document.getElementById("choices");
+var currentQ;
+var currentQindex = 0;
 
 // array of answer options per quiz question
 var questions = [
     {
         title: "What does CSS stand for?",
-        choices: [
+        choice: [
             "Creative Styling Service","Cascading Style Sheets","Cascaded Styling Sheet","Case Sensitive Search"
         ],
         answer: "Cascading Style Sheets"
     },
     {
         title: "What is the difference between a Class and ID?",
-        choices: [
+        choice: [
             "Classes are used to identify one single element in the HTML","ID's are used to identify more than one HTML element","ID's are used to identify one single element in the HTML","Both of these selectors are interchangable"
         ],
         answer: "ID's are used to identify one single element in the HTML"
     },
     {
         title: "Which of the following is not a reserved word in Javascript?",
-        choices: [
+        choice: [
             "throw","default","undefined","finally"
         ],
         answer: "undefined"
     },
     {
         title: "What does HTML stand for?",
-        choices: [
+        choice: [
             "Hyper Text Markdown Language","Hyper Text Markup Language","Hyper Tool Markup Language","Hyper Tool Markdown Language"
         ],
         answer: "Hyper Text Markup Language"
     },
     {
         title: "How can you open a link in a new browser? <a href='url' target='_______'",
-        choices: [
+        choice: [
             "_blank","_tab","_new","_parent"
         ],
         answer: "_blank"
     },
     {
         title: "Inside which HTML element is Javascript placed?",
-        choices: [
+        choice: [
             "<script>","<scripting>","<js>","<javascript>"
         ],
         answer: "<script>"
     },
     {
         title: "What is the correct way to define an picture in HTML?",
-        choices: [
+        choice: [
             "<pic>","<picture>","<image>","<img>"
         ],
         answer: "<img>"
     },
     {
         title: "How many header tags exist in HTML?",
-        choices: [
+        choice: [
             "<h1>-<h9>","<h1>-<h6>","<h1>-<h12>","They are unlimited"
         ],
         answer: "<h1>-<h6>"
     },
     {
         title: "What was Javascript originally named?",
-        choices: [
+        choice: [
             "Java","Latte","Mocha","Brew"
         ],
         answer: "Mocha"
     },
     {
         title: "What is the difference between padding and margin in CSS?",
-        choices: [
+        choice: [
             "Margin is the space around an element's border","Padding is the space around an element's border","Margin is the space between an element's border and content","Both padding and margin are the space between an element's border and content"
         ],
         answer: "Margin is the space around an element's border"
     },
 ];
+
+function showQ() {
+    currentQ = questions[currentQindex];
+    questionTitle.textContent = currentQ.title;
+    choices.innerHTML = "";
+
+    // for loop - going through every question object
+    for (var i = 0; i < currentQ.choice.length; i++) {
+        var choiceButton = document.createElement("button");
+        choiceButton.textContent = i + 1 + ". " + currentQ.choice[i];
+        choices.appendChild(choiceButton);
+    }
+};
 
 function setTimer() {
     var timeInterval = setInterval(function () {
@@ -106,6 +121,8 @@ function startQuiz() {
     document.getElementById("start").setAttribute("hidden", "true");
     // shows timer
     document.getElementById("timer").removeAttribute("hidden");
+    // gets quiz questions to display
+    showQ();
 };
 
 // function end() {
