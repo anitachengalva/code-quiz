@@ -10,6 +10,7 @@ let clock = 101;
 
 var timer = document.getElementById("timer");
 var initialsField = document.getElementById("initialsField");
+var initials = document.getElementById("initials");
 var scoreList = document.getElementById("scoreList");
 
 var questionBox = document.getElementById("questionBox")
@@ -130,10 +131,12 @@ choices.addEventListener("click", function(event) {
             score = score + 1;
             result = "CORRECT +1 POINT";
             yourScore.textContent = "Your Score: " + score;
+            questionResult.style.color = "rgb(93, 168, 125)";
         } else {
             clock = clock - 30;
             result = "INCORRECT -30 SEC";
-        }
+            questionResult.style.color = "tomato";
+        };
         questionResult.innerHTML = result;
         currentQindex++;
         if (currentQindex === questions.length) {
@@ -169,15 +172,19 @@ function submitScore() {
     questionResult.textContent = "Please enter your initials";
 };
 
-// scores to local storage
-// var allScores = localStorage.getItem("allScores");
-// if (allScores) {
-//     allScores = JSON.parse(allScores);
-// } else {
-//     allScores = [];
-// };
 
-// for (var i = 0; i < allScores.length; i++) {
-//     var allScores = allScores[i];
-// };
+// scores to local storage
+initialsField.addEventListener("click", function (event) {
+    
+})
+var allScores = localStorage.getItem("allScores");
+if (allScores) {
+    allScores = JSON.parse(allScores);
+} else {
+    allScores = [];
+};
+
+for (var i = 0; i < allScores.length; i++) {
+    var allScores = allScores[i];
+};
 
