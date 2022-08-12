@@ -1,19 +1,19 @@
 // declare variables
-var start = document.getElementById("#start");
+var start = document.getElementById("start");
 start.onclick = startQuiz;
-var end = document.getElementById("#end");
-var finalScore = document.getElementById("#finalScore");
+var end = document.getElementById("end");
+var finalScore = document.getElementById("finalScore");
 
 let i = 0;
 let score = 0;
 let clock = 99;
 
-var timer = document.getElementById("#timer");
-var message = document.getElementById("#message");
-var scoreList = document.getElementById("#scoreList");
+var timer = document.getElementById("timer");
+var message = document.getElementById("message");
+var scoreList = document.getElementById("scoreList");
 
-var question = document.getElementById("#question");
-var choices = document.getElementById("#choices");
+var question = document.getElementById("question");
+var choices = document.getElementById("choices");
 
 // array of answer options per quiz question
 var questions = [
@@ -89,3 +89,23 @@ var questions = [
     },
 ];
 
+function setTimer() {
+    var timeInterval = setInterval(function () {
+        clock--;
+        timer.textContent = "TIME:" + clock;
+        if (clock === 0) {
+            clearInterval(timeInterval);
+            // end();
+        }
+    }, 1000);
+};
+
+function startQuiz() {
+    setTimer();
+    document.getElementById("start");
+    start.setAttribute("hidden", "true");
+};
+
+// function end() {
+
+// }
