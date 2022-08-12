@@ -21,8 +21,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 200px;
-    background-color: gray;
+    height: 150px;
 }
 
 #timerAndScore h3 {
@@ -36,8 +35,8 @@ header {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 30px;
+    justify-content: flex-start;
+    padding: 10px 30px;
     margin: 5px 30px;
 }
 
@@ -46,8 +45,8 @@ header {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 30px;
+    justify-content: flex-start;
+    padding: 10px 30px;
     margin: 5px 30px;
 }
 
