@@ -1,7 +1,7 @@
 // declare variables
 var start = document.getElementById("start");
 start.onclick = startQuiz;
-var done = document.getElementById("done");
+// var done = document.getElementById("done");
 // done.onclick = submitScore;
 var finalScore = document.getElementById("finalScore");
 
@@ -110,7 +110,7 @@ function setTimer() {
     var timeInterval = setInterval(function () {
         clock--;
         timer.textContent = clock + " SECONDS";
-        if (clock === 0) {
+        if (clock <= 0) {
             clearInterval(timeInterval);
             end();
         }
