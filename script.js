@@ -4,6 +4,10 @@ start.onclick = startQuiz;
 var end = document.getElementById("#end");
 var finalScore = document.getElementById("#finalScore");
 
+let i = 0;
+let score = 0;
+let clock = 99;
+
 var timer = document.getElementById("#timer");
 var message = document.getElementById("#message");
 var scoreList = document.getElementById("#scoreList");
@@ -83,4 +87,5 @@ var questions = [
         ],
         answer: "Margin is the space around an element's border"
     },
-]
+];
+
