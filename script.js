@@ -20,6 +20,12 @@ var currentQindex = 0;
 // array of answer options per quiz question
 var questions = [
     {
+        // hitting start button skips a question, added in a placeholder for the skipped Q, freebie point
+        title: "null",
+        choice: ["null"],
+        answer: "null"
+    },
+    {
         title: "What does CSS stand for?",
         choice: [
             "Creative Styling Service","Cascading Style Sheets","Cascaded Styling Sheet","Case Sensitive Search"
@@ -114,6 +120,31 @@ function setTimer() {
         }
     }, 1000);
 };
+
+// checks if chosen answer is correct
+// adds to user's score if it is
+choices.addEventListener("click", function(event) {
+    var chosenAns = event.target;
+    if (chosenAns.matches("button") === true) {
+        var answer = chosenAns.textContent.substring(3);
+        var result;
+        if (
+            chosenAns.textContent.substring(3) === questions[currentQindex].answer
+        ) {
+            score = score + 1;
+            result = "CORRECT";
+        } else {
+            result = "INCORRECT";
+        }
+        document.getElementById("questionResult").innerHTML = result;
+        currentQindex++;
+        if (currentQindex === questions.length) {
+            end();
+        } else {
+            showQ();
+        }
+    }
+});
 
 function startQuiz() {
     setTimer();
