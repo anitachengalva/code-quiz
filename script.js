@@ -126,7 +126,7 @@ function setTimer() {
 choices.addEventListener("click", function(event) {
     var chosenAns = event.target;
     if (chosenAns.matches("button") === true) {
-        var answer = chosenAns.textContent.substring(3);
+        // var answer = chosenAns.textContent.substring(3);
         var result;
         if (
             chosenAns.textContent.substring(3) === questions[currentQindex].answer
