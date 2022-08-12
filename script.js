@@ -5,7 +5,7 @@ var end = document.getElementById("end");
 var finalScore = document.getElementById("finalScore");
 
 let score = 0;
-let clock = 99;
+let clock = 101;
 
 var timer = document.getElementById("timer");
 var message = document.getElementById("message");
@@ -20,12 +20,6 @@ var currentQindex = 0;
 
 // array of answer options per quiz question
 var questions = [
-    {
-        // hitting start button skips a question, added in a placeholder for the skipped Q
-        title: "null",
-        choice: ["null"],
-        answer: "null"
-    },
     {
         title: "What does CSS stand for?",
         choice: [
@@ -127,17 +121,16 @@ function setTimer() {
 // adds to user's score if it is
 choices.addEventListener("click", function(event) {
     var chosenAns = event.target;
-    if (chosenAns.matches("button") === true) {
-        // var answer = chosenAns.textContent.substring(3);
+    if (chosenAns.matches("#start") === false) {
         var result;
         if (
             chosenAns.textContent.substring(3) === questions[currentQindex].answer
         ) {
             score = score + 1;
-            result = "CORRECT +1";
+            result = "CORRECT +1 POINT";
         } else {
-            result = "";
-            // bypasses bug, automatically marks first question incorrect on start
+            clock = clock - 30;
+            result = "INCORRECT -30 SEC";
         }
         questionResult.innerHTML = result;
         currentQindex++;
