@@ -195,7 +195,7 @@ function submitScore() {
 initialsField.addEventListener("input", function (event) {
     event.preventDefault();
     let userInitials = initialsField.value;
-    if (userInitials === "" || userInitials === " ") {
+    if (userInitials === "") {
         userInitials = alert("Please input valid initials!");
     } else {
         initialsField.value = " ";
