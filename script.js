@@ -180,6 +180,7 @@ function end() {
     done.removeAttribute("hidden");
     // changes text to end screen
     questionResult.textContent = "GAME OVER - Would you like to submit your score?";
+    initialsField.removeAttribute("hidden")
 };
 
 function submitScore() {
@@ -192,13 +193,13 @@ function submitScore() {
 
 
 // scores to local storage
-initialsField.addEventListener("input", function (event) {
+document.getElementById("done").addEventListener("click", function (event) {
     event.preventDefault();
-    let userInitials = initialsField.value;
+    let userInitials = initials.value;
     if (userInitials === "") {
         userInitials = alert("Please input valid initials!");
     } else {
-        initialsField.value = " ";
+        initials.value = " ";
         var userScore = userInitials.concat(": ", score);
         leaderboard.push(userScore);
         localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
